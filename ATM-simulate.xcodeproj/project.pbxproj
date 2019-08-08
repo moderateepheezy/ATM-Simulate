@@ -8,24 +8,73 @@
 
 /* Begin PBXBuildFile section */
 		9433DBA422FA365E00C31946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBA322FA365E00C31946 /* AppDelegate.swift */; };
-		9433DBA622FA365E00C31946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBA522FA365E00C31946 /* ViewController.swift */; };
-		9433DBA922FA365E00C31946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9433DBA722FA365E00C31946 /* Main.storyboard */; };
 		9433DBAB22FA365F00C31946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9433DBAA22FA365F00C31946 /* Assets.xcassets */; };
 		9433DBAE22FA365F00C31946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9433DBAC22FA365F00C31946 /* LaunchScreen.storyboard */; };
+		9433DBDF22FA374300C31946 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBBB22FA374300C31946 /* MulticastDelegate.swift */; };
+		9433DBE422FA374300C31946 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBC222FA374300C31946 /* UIView+Extension.swift */; };
+		9433DBE522FA374300C31946 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBC322FA374300C31946 /* UIViewController+Extension.swift */; };
+		9433DBE622FA374300C31946 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBC422FA374300C31946 /* UINavigationController+Extensions.swift */; };
+		9433DBE722FA374300C31946 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBC522FA374300C31946 /* String+Extension.swift */; };
+		9433DBFD22FA387600C31946 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBFC22FA387600C31946 /* ApplicationCoordinator.swift */; };
+		9433DBFF22FA390400C31946 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DBFE22FA390400C31946 /* HomeViewController.swift */; };
+		9433DC0122FAC95E00C31946 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433DC0022FAC95E00C31946 /* BaseViewController.swift */; };
+		9473304522FAEADE00A5E106 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473304422FAEADE00A5E106 /* HomeViewModel.swift */; };
+		9473304722FAF4E100A5E106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473304622FAF4E100A5E106 /* Main.storyboard */; };
+		9473304A22FAFD5600A5E106 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473304922FAFD5600A5E106 /* Coordinator.swift */; };
+		9473306922FB8B7F00A5E106 /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473306822FB8B7F00A5E106 /* PinViewController.swift */; };
+		9473306B22FB8C0400A5E106 /* PinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473306A22FB8C0400A5E106 /* PinViewModel.swift */; };
+		9473307C22FB8DC100A5E106 /* PinViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473307B22FB8DC100A5E106 /* PinViewModelTest.swift */; };
+		9473307E22FBA25700A5E106 /* PinViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473307D22FBA25700A5E106 /* PinViewModel+Error.swift */; };
+		9473308022FBB70800A5E106 /* TestCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473307F22FBB70800A5E106 /* TestCommon.swift */; };
+		9473308322FBB92100A5E106 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308222FBB92100A5E106 /* HomeViewModelTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9473307522FB8D7A00A5E106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9433DB9822FA365E00C31946 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9433DB9F22FA365E00C31946;
+			remoteInfo = "ATM-simulate";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9433DBA022FA365E00C31946 /* ATM-simulate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ATM-simulate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9433DBA322FA365E00C31946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9433DBA522FA365E00C31946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9433DBA822FA365E00C31946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9433DBAA22FA365F00C31946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9433DBAD22FA365F00C31946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9433DBAF22FA365F00C31946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9433DBBB22FA374300C31946 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		9433DBC222FA374300C31946 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9433DBC322FA374300C31946 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		9433DBC422FA374300C31946 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		9433DBC522FA374300C31946 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		9433DBFC22FA387600C31946 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		9433DBFE22FA390400C31946 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9433DC0022FAC95E00C31946 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9473304422FAEADE00A5E106 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9473304622FAF4E100A5E106 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9473304922FAFD5600A5E106 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9473306822FB8B7F00A5E106 /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
+		9473306A22FB8C0400A5E106 /* PinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewModel.swift; sourceTree = "<group>"; };
+		9473307022FB8D7A00A5E106 /* ATM-simulateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ATM-simulateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473307422FB8D7A00A5E106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9473307B22FB8DC100A5E106 /* PinViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewModelTest.swift; sourceTree = "<group>"; };
+		9473307D22FBA25700A5E106 /* PinViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinViewModel+Error.swift"; sourceTree = "<group>"; };
+		9473307F22FBB70800A5E106 /* TestCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCommon.swift; sourceTree = "<group>"; };
+		9473308222FBB92100A5E106 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9433DB9D22FA365E00C31946 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473306D22FB8D7A00A5E106 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				9433DBA222FA365E00C31946 /* ATM-simulate */,
-				9433DBA122FA365E00C31946 /* Products */,
+				9473307122FB8D7A00A5E106 /* ATM-simulateTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,21 +96,135 @@
 			isa = PBXGroup;
 			children = (
 				9433DBA022FA365E00C31946 /* ATM-simulate.app */,
+				9473307022FB8D7A00A5E106 /* ATM-simulateTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9433DBA222FA365E00C31946 /* ATM-simulate */ = {
 			isa = PBXGroup;
 			children = (
-				9433DBA322FA365E00C31946 /* AppDelegate.swift */,
-				9433DBA522FA365E00C31946 /* ViewController.swift */,
-				9433DBA722FA365E00C31946 /* Main.storyboard */,
-				9433DBAA22FA365F00C31946 /* Assets.xcassets */,
-				9433DBAC22FA365F00C31946 /* LaunchScreen.storyboard */,
+				9433DBB822FA374300C31946 /* Utilities */,
+				9433DBB722FA370100C31946 /* Resources */,
+				9433DBB622FA36DF00C31946 /* Services */,
+				9433DBB522FA36BE00C31946 /* MainModule */,
 				9433DBAF22FA365F00C31946 /* Info.plist */,
 			);
 			path = "ATM-simulate";
+			sourceTree = "<group>";
+		};
+		9433DBB522FA36BE00C31946 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				9473306722FB8B7300A5E106 /* Pin */,
+				9473304322FAE67F00A5E106 /* Home */,
+				9433DC0022FAC95E00C31946 /* BaseViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		9433DBB622FA36DF00C31946 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBFB22FA384900C31946 /* Application */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9433DBB722FA370100C31946 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBA322FA365E00C31946 /* AppDelegate.swift */,
+				9433DBAA22FA365F00C31946 /* Assets.xcassets */,
+				9433DBAC22FA365F00C31946 /* LaunchScreen.storyboard */,
+				9473304622FAF4E100A5E106 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9433DBB822FA374300C31946 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBC122FA374300C31946 /* Extensions */,
+				9433DBBB22FA374300C31946 /* MulticastDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9433DBC122FA374300C31946 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBC222FA374300C31946 /* UIView+Extension.swift */,
+				9433DBC322FA374300C31946 /* UIViewController+Extension.swift */,
+				9433DBC422FA374300C31946 /* UINavigationController+Extensions.swift */,
+				9433DBC522FA374300C31946 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9433DBFB22FA384900C31946 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9473304822FAFD4600A5E106 /* Coordinator */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9473304322FAE67F00A5E106 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBFE22FA390400C31946 /* HomeViewController.swift */,
+				9473304422FAEADE00A5E106 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9473304822FAFD4600A5E106 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9433DBFC22FA387600C31946 /* ApplicationCoordinator.swift */,
+				9473304922FAFD5600A5E106 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9473306722FB8B7300A5E106 /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				9473306822FB8B7F00A5E106 /* PinViewController.swift */,
+				9473306A22FB8C0400A5E106 /* PinViewModel.swift */,
+				9473307D22FBA25700A5E106 /* PinViewModel+Error.swift */,
+			);
+			path = Pin;
+			sourceTree = "<group>";
+		};
+		9473307122FB8D7A00A5E106 /* ATM-simulateTests */ = {
+			isa = PBXGroup;
+			children = (
+				9473308122FBB73300A5E106 /* Common */,
+				9473307A22FB8D8600A5E106 /* ViewModels */,
+				9433DBA122FA365E00C31946 /* Products */,
+				9473307422FB8D7A00A5E106 /* Info.plist */,
+			);
+			path = "ATM-simulateTests";
+			sourceTree = "<group>";
+		};
+		9473307A22FB8D8600A5E106 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9473307B22FB8DC100A5E106 /* PinViewModelTest.swift */,
+				9473308222FBB92100A5E106 /* HomeViewModelTest.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9473308122FBB73300A5E106 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9473307F22FBB70800A5E106 /* TestCommon.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +247,24 @@
 			productReference = 9433DBA022FA365E00C31946 /* ATM-simulate.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9473306F22FB8D7A00A5E106 /* ATM-simulateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9473307722FB8D7A00A5E106 /* Build configuration list for PBXNativeTarget "ATM-simulateTests" */;
+			buildPhases = (
+				9473306C22FB8D7A00A5E106 /* Sources */,
+				9473306D22FB8D7A00A5E106 /* Frameworks */,
+				9473306E22FB8D7A00A5E106 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9473307622FB8D7A00A5E106 /* PBXTargetDependency */,
+			);
+			name = "ATM-simulateTests";
+			productName = "ATM-simulateTests";
+			productReference = 9473307022FB8D7A00A5E106 /* ATM-simulateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +277,10 @@
 				TargetAttributes = {
 					9433DB9F22FA365E00C31946 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					9473306F22FB8D7A00A5E106 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 9433DB9F22FA365E00C31946;
 					};
 				};
 			};
@@ -113,6 +298,7 @@
 			projectRoot = "";
 			targets = (
 				9433DB9F22FA365E00C31946 /* ATM-simulate */,
+				9473306F22FB8D7A00A5E106 /* ATM-simulateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -122,9 +308,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9473304722FAF4E100A5E106 /* Main.storyboard in Resources */,
 				9433DBAE22FA365F00C31946 /* LaunchScreen.storyboard in Resources */,
 				9433DBAB22FA365F00C31946 /* Assets.xcassets in Resources */,
-				9433DBA922FA365E00C31946 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473306E22FB8D7A00A5E106 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +328,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9433DBA622FA365E00C31946 /* ViewController.swift in Sources */,
+				9433DBE622FA374300C31946 /* UINavigationController+Extensions.swift in Sources */,
+				9473306B22FB8C0400A5E106 /* PinViewModel.swift in Sources */,
+				9433DBE722FA374300C31946 /* String+Extension.swift in Sources */,
+				9433DBE422FA374300C31946 /* UIView+Extension.swift in Sources */,
+				9473304522FAEADE00A5E106 /* HomeViewModel.swift in Sources */,
+				9473307E22FBA25700A5E106 /* PinViewModel+Error.swift in Sources */,
+				9433DBFF22FA390400C31946 /* HomeViewController.swift in Sources */,
 				9433DBA422FA365E00C31946 /* AppDelegate.swift in Sources */,
+				9473304A22FAFD5600A5E106 /* Coordinator.swift in Sources */,
+				9433DC0122FAC95E00C31946 /* BaseViewController.swift in Sources */,
+				9473306922FB8B7F00A5E106 /* PinViewController.swift in Sources */,
+				9433DBE522FA374300C31946 /* UIViewController+Extension.swift in Sources */,
+				9433DBDF22FA374300C31946 /* MulticastDelegate.swift in Sources */,
+				9433DBFD22FA387600C31946 /* ApplicationCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9473306C22FB8D7A00A5E106 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9473308322FBB92100A5E106 /* HomeViewModelTest.swift in Sources */,
+				9473308022FBB70800A5E106 /* TestCommon.swift in Sources */,
+				9473307C22FB8DC100A5E106 /* PinViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		9433DBA722FA365E00C31946 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9433DBA822FA365E00C31946 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		9473307622FB8D7A00A5E106 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9433DB9F22FA365E00C31946 /* ATM-simulate */;
+			targetProxy = 9473307522FB8D7A00A5E106 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		9433DBAC22FA365F00C31946 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -314,6 +529,46 @@
 			};
 			name = Release;
 		};
+		9473307822FB8D7A00A5E106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U39GR4X8C4;
+				INFOPLIST_FILE = "ATM-simulateTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simpumind.ATM-simulateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATM-simulate.app/ATM-simulate";
+			};
+			name = Debug;
+		};
+		9473307922FB8D7A00A5E106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U39GR4X8C4;
+				INFOPLIST_FILE = "ATM-simulateTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simpumind.ATM-simulateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATM-simulate.app/ATM-simulate";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +586,15 @@
 			buildConfigurations = (
 				9433DBB322FA365F00C31946 /* Debug */,
 				9433DBB422FA365F00C31946 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9473307722FB8D7A00A5E106 /* Build configuration list for PBXNativeTarget "ATM-simulateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9473307822FB8D7A00A5E106 /* Debug */,
+				9473307922FB8D7A00A5E106 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
