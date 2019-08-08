@@ -27,6 +27,16 @@
 		9473307E22FBA25700A5E106 /* PinViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473307D22FBA25700A5E106 /* PinViewModel+Error.swift */; };
 		9473308022FBB70800A5E106 /* TestCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473307F22FBB70800A5E106 /* TestCommon.swift */; };
 		9473308322FBB92100A5E106 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308222FBB92100A5E106 /* HomeViewModelTest.swift */; };
+		9473308622FC21E600A5E106 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308522FC21E600A5E106 /* MenuViewController.swift */; };
+		9473308822FC22EB00A5E106 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308722FC22EB00A5E106 /* MenuViewModel.swift */; };
+		9473308B22FC416000A5E106 /* MenuViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308A22FC416000A5E106 /* MenuViewModelTest.swift */; };
+		9473308D22FC51C800A5E106 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308C22FC51C800A5E106 /* BalanceViewController.swift */; };
+		9473308F22FC524100A5E106 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473308E22FC524100A5E106 /* BalanceViewModel.swift */; };
+		9473309122FC627300A5E106 /* BalanceViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473309022FC627300A5E106 /* BalanceViewModelTest.swift */; };
+		9473309422FC673C00A5E106 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473309322FC673C00A5E106 /* WithdrawViewController.swift */; };
+		9473309622FC67A300A5E106 /* WithdrawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473309522FC67A300A5E106 /* WithdrawViewModel.swift */; };
+		9473309822FC6E0400A5E106 /* WithdrawViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473309722FC6E0300A5E106 /* WithdrawViewModel+Error.swift */; };
+		9473309A22FC782400A5E106 /* WithdrawViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473309922FC782400A5E106 /* WithdrawViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +74,16 @@
 		9473307D22FBA25700A5E106 /* PinViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinViewModel+Error.swift"; sourceTree = "<group>"; };
 		9473307F22FBB70800A5E106 /* TestCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCommon.swift; sourceTree = "<group>"; };
 		9473308222FBB92100A5E106 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		9473308522FC21E600A5E106 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9473308722FC22EB00A5E106 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		9473308A22FC416000A5E106 /* MenuViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelTest.swift; sourceTree = "<group>"; };
+		9473308C22FC51C800A5E106 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		9473308E22FC524100A5E106 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		9473309022FC627300A5E106 /* BalanceViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelTest.swift; sourceTree = "<group>"; };
+		9473309322FC673C00A5E106 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		9473309522FC67A300A5E106 /* WithdrawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewModel.swift; sourceTree = "<group>"; };
+		9473309722FC6E0300A5E106 /* WithdrawViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WithdrawViewModel+Error.swift"; sourceTree = "<group>"; };
+		9473309922FC782400A5E106 /* WithdrawViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +137,9 @@
 		9433DBB522FA36BE00C31946 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				9473309222FC655000A5E106 /* Withdraw */,
+				9473308922FC412900A5E106 /* Balance */,
+				9473308422FC212100A5E106 /* Menu */,
 				9473306722FB8B7300A5E106 /* Pin */,
 				9473304322FAE67F00A5E106 /* Home */,
 				9433DC0022FAC95E00C31946 /* BaseViewController.swift */,
@@ -215,6 +238,9 @@
 			children = (
 				9473307B22FB8DC100A5E106 /* PinViewModelTest.swift */,
 				9473308222FBB92100A5E106 /* HomeViewModelTest.swift */,
+				9473308A22FC416000A5E106 /* MenuViewModelTest.swift */,
+				9473309022FC627300A5E106 /* BalanceViewModelTest.swift */,
+				9473309922FC782400A5E106 /* WithdrawViewModelTest.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,6 +251,34 @@
 				9473307F22FBB70800A5E106 /* TestCommon.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		9473308422FC212100A5E106 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9473308522FC21E600A5E106 /* MenuViewController.swift */,
+				9473308722FC22EB00A5E106 /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		9473308922FC412900A5E106 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				9473308C22FC51C800A5E106 /* BalanceViewController.swift */,
+				9473308E22FC524100A5E106 /* BalanceViewModel.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		9473309222FC655000A5E106 /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				9473309322FC673C00A5E106 /* WithdrawViewController.swift */,
+				9473309522FC67A300A5E106 /* WithdrawViewModel.swift */,
+				9473309722FC6E0300A5E106 /* WithdrawViewModel+Error.swift */,
+			);
+			path = Withdraw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,19 +383,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				9433DBE622FA374300C31946 /* UINavigationController+Extensions.swift in Sources */,
+				9473308622FC21E600A5E106 /* MenuViewController.swift in Sources */,
 				9473306B22FB8C0400A5E106 /* PinViewModel.swift in Sources */,
 				9433DBE722FA374300C31946 /* String+Extension.swift in Sources */,
 				9433DBE422FA374300C31946 /* UIView+Extension.swift in Sources */,
 				9473304522FAEADE00A5E106 /* HomeViewModel.swift in Sources */,
+				9473308D22FC51C800A5E106 /* BalanceViewController.swift in Sources */,
+				9473308F22FC524100A5E106 /* BalanceViewModel.swift in Sources */,
 				9473307E22FBA25700A5E106 /* PinViewModel+Error.swift in Sources */,
 				9433DBFF22FA390400C31946 /* HomeViewController.swift in Sources */,
 				9433DBA422FA365E00C31946 /* AppDelegate.swift in Sources */,
 				9473304A22FAFD5600A5E106 /* Coordinator.swift in Sources */,
+				9473309622FC67A300A5E106 /* WithdrawViewModel.swift in Sources */,
+				9473309822FC6E0400A5E106 /* WithdrawViewModel+Error.swift in Sources */,
 				9433DC0122FAC95E00C31946 /* BaseViewController.swift in Sources */,
 				9473306922FB8B7F00A5E106 /* PinViewController.swift in Sources */,
 				9433DBE522FA374300C31946 /* UIViewController+Extension.swift in Sources */,
 				9433DBDF22FA374300C31946 /* MulticastDelegate.swift in Sources */,
+				9473309422FC673C00A5E106 /* WithdrawViewController.swift in Sources */,
 				9433DBFD22FA387600C31946 /* ApplicationCoordinator.swift in Sources */,
+				9473308822FC22EB00A5E106 /* MenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +413,9 @@
 				9473308322FBB92100A5E106 /* HomeViewModelTest.swift in Sources */,
 				9473308022FBB70800A5E106 /* TestCommon.swift in Sources */,
 				9473307C22FB8DC100A5E106 /* PinViewModelTest.swift in Sources */,
+				9473308B22FC416000A5E106 /* MenuViewModelTest.swift in Sources */,
+				9473309A22FC782400A5E106 /* WithdrawViewModelTest.swift in Sources */,
+				9473309122FC627300A5E106 /* BalanceViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

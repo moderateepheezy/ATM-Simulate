@@ -13,6 +13,10 @@ class ApplicationCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
     
     // MARK: Private Properties
     fileprivate var pinContainer: UINavigationController?
+    fileprivate var platformContainer: UINavigationController?
+    fileprivate var balanceContainer: UINavigationController?
+    fileprivate var withdrawContainer: UINavigationController?
+    fileprivate var userBalance: Int = 30000
     
     //MARK: - Public Properties
     var childCoordinators: [Coordinator] = [Coordinator]()
@@ -29,10 +33,10 @@ class ApplicationCoordinator: NSObject, Coordinator, UINavigationControllerDeleg
 
 // MARK: - Error Handling
 private extension ApplicationCoordinator {
-    func handle(title: String = "Error!", error: String, completion: ((UIAlertAction) -> ())? = nil) {
+    func handle(title: String = "Error!", message: String, completion: ((UIAlertAction) -> ())? = nil) {
         let alert = UIAlertController(
             title: title,
-            message: error,
+            message: message,
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(
@@ -48,7 +52,7 @@ private extension ApplicationCoordinator {
 
 // MARK: - Cancel Handling
 private extension ApplicationCoordinator {
-    func handleCancelableAlert(title: String,  message: String, completion: ((UIAlertAction) -> ())? = nil) {
+    func handleCancelableAlert(title: String,  message: String, completion: ((UIAlertAction) -> ())? = nil, cancelledCompletion: ((UIAlertAction) -> ())? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -57,13 +61,21 @@ private extension ApplicationCoordinator {
         alert.addAction(UIAlertAction(
             title: "OK",
             style: .default,
-            handler: nil
+            handler: completion
         ))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: completion))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: cancelledCompletion))
         
         let target = navigationController.visibleViewController ?? navigationController
         target.present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Print Receipt Handling
+private extension ApplicationCoordinator {
+    func handleReceiptAlert(okCompletion: ((UIAlertAction) -> ())? = nil,
+                            cancelCompletion: ((UIAlertAction) -> ())? = nil) {
+        handleCancelableAlert(title: "Print Receipt", message: "Will you like to print the receipt of this transaction?", completion: okCompletion, cancelledCompletion: cancelCompletion)
     }
 }
 
@@ -87,6 +99,7 @@ extension ApplicationCoordinator {
         }
     }
     
+    // Pin Controller
     private func showPin() {
         let viewModel = PinViewModel()
         viewModel.delegate.add(self)
@@ -95,6 +108,42 @@ extension ApplicationCoordinator {
         viewController.viewModel = viewModel
         let nav = UINavigationController(rootViewController: viewController)
         pinContainer = nav
+        navigationController.present(nav, animated: true, completion: nil)
+    }
+    
+    // Platform Controller
+    private func showPlatformTransaction() {
+        let viewModel = MenuViewModel()
+        viewModel.delegate.add(self)
+        
+        let viewController = MenuViewController.instantiate()
+        viewController.viewModel = viewModel
+        let nav = UINavigationController(rootViewController: viewController)
+        platformContainer = nav
+        navigationController.present(nav, animated: true, completion: nil)
+    }
+    
+    // Balance Controller
+    private func showBalance() {
+        let viewModel = BalanceViewModel(balance: userBalance)
+        viewModel.delegate.add(self)
+        
+        let viewController = BalanceViewController.instantiate()
+        viewController.viewModel = viewModel
+        let nav = UINavigationController(rootViewController: viewController)
+        balanceContainer = nav
+        navigationController.present(nav, animated: true, completion: nil)
+    }
+    
+    // Withdraw Controller
+    private func showWithdrawal() {
+        let viewModel = WithdrawViewModel(balance: userBalance)
+        viewModel.delegate.add(self)
+        
+        let viewController = WithdrawViewController.instantiate()
+        viewController.viewModel = viewModel
+        let nav = UINavigationController(rootViewController: viewController)
+        withdrawContainer = nav
         navigationController.present(nav, animated: true, completion: nil)
     }
 }
@@ -111,27 +160,30 @@ extension ApplicationCoordinator: HomeViewModelDelegate {
 extension ApplicationCoordinator: PinViewModelDelegate {
     
     func pinViewModel(_ viewModel: PinViewModel) {
-        
+        self.pinContainer?.dismiss(animated: true, completion: nil)
+        viewModel.delegate.removeAll()
+        self.pinContainer = nil
+        showPlatformTransaction()
     }
     
     func pinViewModel(_ viewModel: PinViewModel, error: Error) {
         switch error {
         case PinViewModel.Error.wrongPin:
-            handleCancelableAlert(title: "Error", message: error.localizedDescription) {[weak self] _ in
+            handleCancelableAlert(title: "Error", message: error.localizedDescription, completion: nil)  {[weak self] _ in
                 self?.pinContainer?.dismiss(animated: true, completion: nil)
                 viewModel.delegate.removeAll()
                 self?.pinContainer = nil
             }
         case PinViewModel.Error.exceedAttemptLimit:
-            handle(error: error.localizedDescription) {[weak self] _ in
+            handle(message: error.localizedDescription) {[weak self] _ in
                 self?.pinContainer?.dismiss(animated: true, completion: nil)
                 viewModel.delegate.removeAll()
                 self?.pinContainer = nil
             }
         case PinViewModel.Error.noText:
-            handle(error: error.localizedDescription)
+            handle(message: error.localizedDescription)
         default:
-            handle(error: "Something went wrong!")
+            handle(message: "Something went wrong!")
         }
     }
     
@@ -142,3 +194,118 @@ extension ApplicationCoordinator: PinViewModelDelegate {
     }
 }
 
+// MARK:- MenuViewModelDelegate
+extension ApplicationCoordinator: MenuViewModelDelegate {
+    func menuViewModelBalance(_ viewModel: MenuViewModel) {
+        self.platformContainer?.dismiss(animated: true, completion: nil)
+        viewModel.delegate.removeAll()
+        self.platformContainer = nil
+        
+        showBalance()
+    }
+    
+    func menuViewModelWithdraw(_ viewModel: MenuViewModel) {
+        self.platformContainer?.dismiss(animated: true, completion: nil)
+        viewModel.delegate.removeAll()
+        self.platformContainer = nil
+        
+        showWithdrawal()
+    }
+    
+    func menuViewModelCancel(_ viewModel: MenuViewModel) {
+        self.platformContainer?.dismiss(animated: true, completion: nil)
+        viewModel.delegate.removeAll()
+        self.platformContainer = nil
+    }
+}
+
+// MARK:- MenuViewModelDelegate
+extension ApplicationCoordinator: BalanceViewModelDelegate {
+    func balanceViewModelCancelled(_ viewModel: BalanceViewModel) {
+        
+        handleReceiptAlert(okCompletion: {[weak self] (_) in
+            guard let self = self else {return}
+            let receipt = "Date: \(Date())\nMachine Location: Yaba\nTransaction Type: Balance\nAccount: 0121293940\nAvailable Balance: \(self.userBalance)"
+            self.handle(title: "Receipt", message: receipt, completion: {[weak self] (_) in
+                
+                self?.handleCancelableAlert(title: "Transaction Cancelled", message: "Do you want to perform another transaction?", completion: {[weak self] (_) in
+                    self?.balanceContainer?.dismiss(animated: true, completion: nil)
+                    viewModel.delegate.removeAll()
+                    self?.balanceContainer = nil
+                    
+                    self?.showPin()
+                    }, cancelledCompletion: {[weak self] (_) in
+                        self?.balanceContainer?.dismiss(animated: true, completion: nil)
+                        viewModel.delegate.removeAll()
+                        self?.balanceContainer = nil
+                })
+                
+            })
+        }) {[weak self] (_) in
+            self?.balanceContainer?.dismiss(animated: true, completion: nil)
+            viewModel.delegate.removeAll()
+            self?.balanceContainer = nil
+        }
+    }
+}
+
+// MARK:- WithdrawViewModelDelegate
+extension ApplicationCoordinator: WithdrawViewModelDelegate {
+    func withdrawViewModel(_ viewModel: WithdrawViewModel, amount: Int) {
+        
+        self.userBalance = userBalance - amount
+        
+        handle(title: "Withdraw Successful", message: "") {[weak self] (_) in
+            self?.handleReceiptAlert(okCompletion: {[weak self] (_) in
+                guard let self = self else { return }
+                let receipt = "Date: \(Date())\nMachine Location: Yaba\nTransaction Type: Balance\nAccount: 0121293940\nAvailable Balance: \(self.userBalance)"
+                self.handle(title: "Receipt", message: receipt, completion: {[weak self] (_) in
+                    
+                    self?.handleCancelableAlert(title: "Transaction Completed", message: "Do you want to perform another transaction?", completion: {[weak self] (_) in
+                        self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+                        viewModel.delegate.removeAll()
+                        self?.withdrawContainer = nil
+                        
+                        self?.showPin()
+                        }, cancelledCompletion: {[weak self] (_) in
+                            self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+                            viewModel.delegate.removeAll()
+                            self?.withdrawContainer = nil
+                    })
+                    
+                    
+                })
+            }) {[weak self] (_) in
+                self?.handleCancelableAlert(title: "Transaction Completed", message: "Do you want to perform another transaction?", completion: {[weak self] (_) in
+                    self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+                    viewModel.delegate.removeAll()
+                    self?.withdrawContainer = nil
+                    
+                    self?.showPin()
+                    }, cancelledCompletion: {[weak self] (_) in
+                        self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+                        viewModel.delegate.removeAll()
+                        self?.withdrawContainer = nil
+                })
+            }
+        }
+    }
+    
+    func withdrawViewModel(_ viewModel: WithdrawViewModel, error: Error) {
+        handle(message: error.localizedDescription)
+    }
+    
+    func withdrawViewModelCancel(_ viewModel: WithdrawViewModel) {
+        self.handleCancelableAlert(title: "Transaction Cancelled", message: "Do you want to perform another transaction?", completion: {[weak self] (_) in
+            self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+            viewModel.delegate.removeAll()
+            self?.withdrawContainer = nil
+            
+            self?.showPin()
+            }, cancelledCompletion: {[weak self] (_) in
+                self?.withdrawContainer?.dismiss(animated: true, completion: nil)
+                viewModel.delegate.removeAll()
+                self?.withdrawContainer = nil
+        })
+    }
+}
