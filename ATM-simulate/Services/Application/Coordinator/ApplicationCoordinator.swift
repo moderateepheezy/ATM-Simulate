@@ -258,7 +258,7 @@ extension ApplicationCoordinator: WithdrawViewModelDelegate {
         handle(title: "Withdraw Successful", message: "") {[weak self] (_) in
             self?.handleReceiptAlert(okCompletion: {[weak self] (_) in
                 guard let self = self else { return }
-                let receipt = "Date: \(Date())\nMachine Location: Yaba\nTransaction Type: Balance\nAccount: 0121293940\nAvailable Balance: \(self.userBalance)"
+                let receipt = "Date: \(Date())\nMachine Location: Yaba\nTransaction Type: Debit\nAmount: \(amount)\nAccount: 0121293940\nAvailable Balance: \(self.userBalance)"
                 self.handle(title: "Receipt", message: receipt, completion: {[weak self] (_) in
                     
                     self?.handleCancelableAlert(title: "Transaction Completed", message: "Do you want to perform another transaction?", completion: {[weak self] (_) in
